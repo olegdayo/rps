@@ -21,7 +21,7 @@ jobs:
         shell: bash
       
       - name: Install hardhat
-        run: yarn install hardhat
+        run: yarn add hardhat
 
       - name: Initialize local node and deploy
         run: |
