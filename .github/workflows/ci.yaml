@@ -20,8 +20,5 @@ jobs:
       - name: update
         run: npm install
 
-      - name: Create local node and deploy
-        run: npx hardhat node & npx hardhat run scripts/deploy.js --network localhost
-
       - name: Run Tests
         run: npx hardhat test
