@@ -1,9 +1,9 @@
 name: CI
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 
 jobs:
   tests:
@@ -16,9 +16,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      
-      - name: Install hardhat
-        run: npm install hardhat
 
-      - name: Run tests
-        run: npx hardhat test
+      - run: yarn --ignore-scripts
+        shell: bash
+
+      - name: Create local node and deploy
+        run: |
+          yarn hardhat node &
+          yarn hardhat run scripts/deploy.ts --network localhost
+          
+      - name: Run Tests
+        run: yarn hardhat test
