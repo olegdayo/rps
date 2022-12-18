@@ -1,9 +1,9 @@
 name: CI
 on:
   push:
-    branches: [main]
+    branches: [ master ]
   pull_request:
-    branches: [main]
+    branches: [ master ]
 
 jobs:
   tests:
@@ -24,6 +24,6 @@ jobs:
         run: |
           yarn hardhat node &
           yarn hardhat run scripts/deploy.ts --network localhost
-          
+
       - name: Run Tests
         run: yarn hardhat test
