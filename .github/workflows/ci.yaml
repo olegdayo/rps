@@ -1,7 +1,9 @@
 name: CI
+
 on:
   push:
     branches: [ master ]
+
   pull_request:
     branches: [ master ]
 
@@ -21,8 +23,8 @@ jobs:
         with:
           node-version: '18.x'
       
-      - name: update
+      - name: Update
         run: npm install
 
-      - name: Run Tests
+      - name: Run tests
         run: npx hardhat test
