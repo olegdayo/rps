@@ -20,6 +20,9 @@ jobs:
       - run: yarn --ignore-scripts
         shell: bash
 
+      - name: hardhat
+        run: yarn add --dev hardhat
+
       - name: Create local node and deploy
         run: |
           yarn hardhat node &
