@@ -42,6 +42,10 @@ contract rps {
         changePhaseTo(Stage.Registration);
     }
 
+    function getStatus() external view returns(Stage) {
+        return currentPhase;
+    }
+
     function changePhaseTo(Stage phase) private {
         currentPhase = phase;
         emit PhaseChanged(currentPhase);
