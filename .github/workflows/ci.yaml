@@ -19,6 +19,9 @@ jobs:
 
       - run: yarn --ignore-scripts
         shell: bash
+      
+      - name: update
+        run: npm install
 
       - name: hardhat
         run: npm install hardhat
