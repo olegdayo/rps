@@ -16,17 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-
-      - run: yarn --ignore-scripts
-        shell: bash
       
       - name: Install hardhat
-        run: yarn add hardhat
-
-      - name: Initialize local node and deploy
-        run: |
-          yarn hardhat node &
-          yarn hardhat run scripts/deploy.ts --network localhost
+        run: npm install hardhat
 
       - name: Run tests
-        run: yarn hardhat test
+        run: npx hardhat test
