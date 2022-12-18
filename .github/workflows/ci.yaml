@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  ALCHEMY_API_KEY: 0
+  GOERLI_PRIVATE_KEY: 0
+
 jobs:
   tests:
     runs-on: ubuntu-latest
