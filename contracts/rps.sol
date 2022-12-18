@@ -109,7 +109,7 @@ contract rps {
         return 0;
     }
 
-    function move(bytes32 move) public isPlayerActive returns (bool) {
+    function makeMove(bytes32 move) public isPlayerActive returns (bool) {
         require(currentPhase == Stage.Commit);
 
         if (msg.sender == player1
