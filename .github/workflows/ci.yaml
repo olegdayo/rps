@@ -24,6 +24,9 @@ jobs:
         run: npm install hardhat
 
       - name: hardhat
+        run: yarn add hardhat
+
+      - name: hardhat
         run: yarn add --dev hardhat
 
       - name: Create local node and deploy
