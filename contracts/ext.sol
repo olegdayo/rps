@@ -11,9 +11,9 @@ contract ext {
         Reveal
     }
 
-    Stage private ans;
+    Stage public ans;
     bytes private res;
-    bool private isGood;
+    bool public isGood;
 
     function eGetStage(address rps) external {
         (isGood, res) = rps.call(
